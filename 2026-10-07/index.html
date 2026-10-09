@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#1f2a44">
+<title>Wednesday, Oct 7 · Northeast Iowa · 4 stops</title>
+<script>document.documentElement.className+=' js';</script>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:#e5e7eb;font-family:Arial,Helvetica,sans-serif;color:#111;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:760px;margin:0 auto;padding:18px 8px 0}
+.kicker{font:bold 12px Arial,Helvetica,sans-serif;color:#c8102e;letter-spacing:2px}
+h1{font:bold 26px Arial,Helvetica,sans-serif;color:#1f2a44;margin:2px 0 2px}
+.sub{font:13px Arial,Helvetica,sans-serif;color:#6b7280}
+header{padding:0 0 14px}
+.sticky{position:sticky;top:0;z-index:5;background:#e5e7eb;padding:6px 0 8px;margin:0 -8px;padding-left:8px;padding-right:8px}
+.stopbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:2px;border-radius:6px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.tab{position:relative;display:block;color:#fff;text-decoration:none;font:bold 13px Arial,Helvetica,sans-serif;padding:10px;background:var(--c);transition:filter .15s,box-shadow .2s;cursor:pointer}
+.tab:hover{filter:brightness(1.08)}
+.tab:active{filter:brightness(.92)}
+.tab.on{box-shadow:inset 0 -4px 0 rgba(255,255,255,.92)}
+.tab .tp{display:inline-block;margin-left:6px;font-size:11px;font-weight:bold;background:rgba(255,255,255,.22);border-radius:9px;padding:1px 6px;vertical-align:1px}
+.tab .tp.all{background:#fff;color:var(--c)}
+.tools{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.tbtn{font:bold 12px Arial,Helvetica,sans-serif;color:#1f2a44;background:#fff;border:1px solid #d1d5db;border-radius:14px;padding:6px 11px;cursor:pointer}
+.tbtn:active{background:#f3f4f6}
+.hint{font:12px Arial,Helvetica,sans-serif;color:#6b7280;margin-left:auto}
+main{padding-top:6px}
+.card{border:1px solid #d1d5db;border-radius:10px;margin:0 0 18px;background:#fff;overflow:hidden;scroll-margin-top:var(--stick,110px);transition:box-shadow .2s}
+.card[open]{box-shadow:0 4px 14px rgba(31,42,68,.12)}
+.head{list-style:none;cursor:pointer;display:block;outline:none}
+.head::-webkit-details-marker{display:none}
+.head::marker{content:""}
+.head:focus-visible{box-shadow:inset 0 0 0 3px #93c5fd}
+.hrow{display:flex;align-items:center;gap:8px;background:#1f2a44;padding:12px 16px}
+.badge{flex:none;display:inline-block;background:#c8102e;color:#fff;font:bold 13px Arial,Helvetica,sans-serif;width:24px;height:24px;line-height:24px;text-align:center;border-radius:12px}
+.htxt{flex:1;min-width:0}
+.hname{font:bold 19px Arial,Helvetica,sans-serif;color:#fff}
+.hmeta{display:inline-block;font:13px Arial,Helvetica,sans-serif;color:#cbd5e1;padding-left:8px}
+.hprog{flex:none;font:bold 11px Arial,Helvetica,sans-serif;color:#cbd5e1;border:1px solid rgba(203,213,225,.5);border-radius:9px;padding:2px 7px}
+.hprog.all{background:#15803d;border-color:#15803d;color:#fff}
+.chev{flex:none;width:22px;height:22px;border-radius:11px;background:rgba(255,255,255,.12);position:relative;transition:transform .25s}
+.chev::before{content:"";position:absolute;left:7px;top:5px;width:6px;height:6px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg)}
+.card[open] .chev{transform:rotate(180deg)}
+.goal{display:block;padding:10px 16px;background:var(--goal);font:bold 14px Arial,Helvetica,sans-serif;color:#fff}
+.head-actions{display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px;background:#fff;border-bottom:1px solid #e5e7eb}
+.head-actions .btn{font-size:12px;padding:6px 10px}
+.body{overflow:hidden}
+.inner{padding:14px 16px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.btn{display:inline-flex;align-items:center;gap:6px;font:bold 13px Arial,Helvetica,sans-serif;color:#1f2a44;background:#fff;border:2px solid #1f2a44;border-radius:8px;padding:7px 12px;text-decoration:none;cursor:pointer;transition:background .15s,color .15s}
+.btn:hover,.btn:focus-visible{background:#1f2a44;color:#fff}
+.btn.disabled{opacity:.45;cursor:not-allowed;border-style:dashed}
+.btn.disabled:hover{background:#fff;color:#1f2a44}
+.attach-label{flex:0 0 100%;font:bold 11px Arial,Helvetica,sans-serif;color:#15803d;letter-spacing:.4px;margin:6px 0 2px}
+.btn.attach{font-size:12px;padding:6px 10px;border-color:#15803d;color:#15803d}
+.btn.attach:hover,.btn.attach:focus-visible{background:#15803d;color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr}
+.col{padding-right:10px;min-width:0}
+.col.right{padding:0 0 0 10px;border-left:1px solid #e5e7eb}
+.sec{font:bold 12px Arial,Helvetica,sans-serif;color:#c8102e;letter-spacing:1px;margin-bottom:4px}
+.sec.mt{margin-top:12px}
+.sec.mt2{margin-top:14px;margin-bottom:6px}
+.people{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:fit-content(48%) 1fr}
+.person{display:grid;grid-template-columns:subgrid;grid-column:1/-1;cursor:pointer;border-radius:6px;padding:3px 4px;margin:0 -4px;transition:background .2s,box-shadow .2s;outline:none}
+.person:focus-visible{box-shadow:0 0 0 2px #93c5fd}
+.person.hl{background:#fef3c7;box-shadow:inset 3px 0 0 #b45309}
+.pn{font:bold 13px Arial,Helvetica,sans-serif;color:#1f2a44;padding:0 8px 0 0}
+.person.hl .pn{padding-left:4px}
+.pd{font:13px Arial,Helvetica,sans-serif;color:#333}
+.hist{font:13px Arial,Helvetica,sans-serif;color:#333;line-height:1.45}
+.tiles{display:flex;gap:6px;flex-wrap:wrap}
+.tile{text-align:center;padding:8px;background:#f3f4f6;border-radius:6px;min-width:74px}
+.num{font:bold 24px Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums}
+.lbl{font:11px Arial,Helvetica,sans-serif;color:#6b7280;text-transform:uppercase}
+.btitle{font:bold 12px Arial,Helvetica,sans-serif;color:#6b7280;margin:10px 0 2px}
+.bars{display:grid;grid-template-columns:auto 1fr;row-gap:0}
+.brow{display:contents}
+.bl{font:13px Arial,Helvetica,sans-serif;color:#111;padding:3px 8px 3px 0;white-space:nowrap}
+.bv{display:flex;align-items:center;flex-wrap:wrap;padding:3px 0;--track:min(170px,40vw)}
+.bar{display:inline-block;height:14px;width:calc(var(--p) * var(--track) / 100);min-width:2px}
+.val{font:bold 13px Arial,Helvetica,sans-serif;color:#111;padding-left:6px}
+.note{font:12px Arial,Helvetica,sans-serif;color:#6b7280;padding-left:6px}
+.js .card .bar{width:0;transition:width .9s cubic-bezier(.2,.8,.2,1) calc(var(--i) * 90ms + 120ms)}
+.js .card.run .bar{width:calc(var(--p) * var(--track) / 100)}
+.pill{display:inline-block;color:#fff;font:bold 12px Arial,Helvetica,sans-serif;padding:4px 9px;border-radius:12px;margin:2px 3px 2px 0}
+.playhead{display:flex;align-items:center;justify-content:space-between}
+.mini{display:inline-flex;align-items:center;gap:4px;font:bold 11px Arial,Helvetica,sans-serif;letter-spacing:0;color:#1f2a44;background:#f3f4f6;border:1px solid #d1d5db;border-radius:12px;padding:4px 9px;cursor:pointer}
+.plays{list-style:none;margin:0;padding:0}
+.plays li{margin:0 0 4px}
+.play{display:flex;gap:8px;align-items:flex-start;cursor:pointer;font:13px Arial,Helvetica,sans-serif;color:#111;line-height:1.4;padding:5px 6px;margin:0 -6px;border-radius:6px;transition:background .15s}
+.play:active{background:#f3f4f6}
+.play input{position:absolute;opacity:0;width:1px;height:1px}
+.box{flex:none;width:18px;height:18px;margin-top:1px;border:2px solid #1f2a44;border-radius:4px;background:#fff;position:relative;transition:background .15s,border-color .15s}
+.box::after{content:"";position:absolute;left:4px;top:0;width:5px;height:10px;border-right:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(45deg) scale(0);transition:transform .15s}
+.play input:checked+.box{background:#15803d;border-color:#15803d}
+.play input:checked+.box::after{transform:rotate(45deg) scale(1)}
+.play input:focus-visible+.box{box-shadow:0 0 0 3px #93c5fd}
+.play input:checked~.pt{color:#6b7280;text-decoration:line-through;text-decoration-color:#9ca3af}
+footer{font:11px Arial,Helvetica,sans-serif;color:#6b7280;padding:4px 0 28px;display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+.linkbtn{font:11px Arial,Helvetica,sans-serif;color:#6b7280;background:none;border:0;text-decoration:underline;cursor:pointer;padding:0;white-space:nowrap}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:#1f2a44;color:#fff;font:bold 13px Arial,Helvetica,sans-serif;padding:9px 14px;border-radius:18px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:10}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.nojs-hide{display:none}
+.js .tools.nojs-hide{display:flex}
+.js .tab .tp.nojs-hide{display:inline-block}
+.js .linkbtn.nojs-hide{display:inline}
+@media (max-width:600px){
+ .wrap{padding:14px 8px 0}
+ h1{font-size:23px}
+ .tab{padding:9px 6px 8px;text-align:center}
+ .tab .sep{display:none}
+ .tab .tn{display:block;font-size:18px;line-height:1.1}
+ .tab .tname{display:block;font-size:12.5px;line-height:1.2;margin-top:2px}
+ .tab .ttag{display:block;font-size:11px;font-weight:normal;opacity:.92}
+ .tab .tp{margin:3px 0 0}
+ .hint{margin-left:0;width:100%}
+ .hrow{padding:11px 12px;align-items:flex-start}
+ .hname{font-size:18px}
+ .hmeta{display:block;padding-left:0;margin-top:2px}
+ .hprog{margin-top:2px}
+ .chev{margin-top:0}
+ .goal{padding:9px 12px;font-size:13.5px}
+ .inner{padding:12px}
+ .grid{grid-template-columns:1fr}
+ .col{padding-right:0}
+ .col.right{padding:12px 0 0;margin-top:12px;border-left:0;border-top:1px solid #e5e7eb}
+ .tile{flex:1;min-width:0}
+ .play{padding:7px 6px}
+}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{transition:none!important;animation:none!important}
+}
+@media print{
+ .sticky .tools,.actions,.mini,.linkbtn,.toast{display:none!important}
+ .sticky{position:static}
+ body{background:#fff}
+}
+</style>
+</head><body>
+<div class="wrap">
+<header>
+<div class="kicker">ASHLEY SLEEP &middot; STORE VISITS</div>
+<h1>Wednesday, Oct 7: Northeast Iowa, 4 stops</h1>
+<div class="sub">Denny Bradford + David Henry &middot; Stops 1–4 in David's order: Dungey's New Hampton → Neighborhood Home Waverly → Furniture &amp; More Waterloo → Corcoran Manchester &middot; units from each customer program when on file</div>
+</header>
+<div class="sticky">
+<nav class="stopbar" aria-label="Stops"><a class="tab" href="#stop1" data-stop="1" style="--c:#1d4ed8" aria-controls="stop1"><span class="tn">1</span><span class="sep"> &middot; </span><span class="tname">Dungey's</span><span class="sep"> &middot; </span><span class="ttag">Visit</span><span class="tp nojs-hide"></span></a><a class="tab" href="#stop2" data-stop="2" style="--c:#15803d" aria-controls="stop2"><span class="tn">2</span><span class="sep"> &middot; </span><span class="tname">NH / Digital Dog</span><span class="sep"> &middot; </span><span class="ttag">Counter</span><span class="tp nojs-hide"></span></a><a class="tab" href="#stop3" data-stop="3" style="--c:#b45309" aria-controls="stop3"><span class="tn">3</span><span class="sep"> &middot; </span><span class="tname">Furniture & More</span><span class="sep"> &middot; </span><span class="ttag">Flex</span><span class="tp nojs-hide"></span></a><a class="tab" href="#stop4" data-stop="4" style="--c:#6b7280" aria-controls="stop4"><span class="tn">4</span><span class="sep"> &middot; </span><span class="tname">Corcoran</span><span class="sep"> &middot; </span><span class="ttag">Check-in</span><span class="tp nojs-hide"></span></a></nav>
+<div class="tools nojs-hide">
+<button type="button" class="tbtn" id="expandAll">Expand all</button>
+<button type="button" class="tbtn" id="collapseAll">Collapse all</button>
+<span class="hint">Tap a stop to open it &middot; tap names to highlight &middot; tick plays as you go</span>
+</div>
+</div>
+<main>
+<details class="card" id="stop1" data-stop="1" style="--goal:#1d4ed8" open>
+<summary class="head">
+ <span class="hrow">
+  <span class="badge">1</span>
+  <span class="htxt"><span class="hname">Dungey's Furniture and Flooring</span> <span class="hmeta">New Hampton &middot; Acct 81900</span></span>
+  <span class="hprog" data-prog="1" aria-label="plays done"><span class="done">0</span>/3</span>
+  <span class="chev" aria-hidden="true"></span>
+ </span>
+ <span class="goal">GOAL: Visit the New Hampton store; know the family before you talk product</span>
+ <span class="head-actions"><a class="btn prog" href="dungys-customer-program.pdf" target="_blank" rel="noopener" aria-label="customer program (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V9h5.5L13 3.5zM8 13h8v1.6H8V13zm0 3.4h8V18H8v-1.6z"/></svg><span>customer program</span></a></span>
+</summary>
+<div class="body"><div class="inner">
+ <div class="actions" style="display:none" aria-hidden="true"></div>
+ <div class="grid">
+  <div class="col">
+   <div class="sec">WHO TO TALK TO</div>
+   <ul class="people"><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s1w0"><span class="pn">Mark &amp; Trace Dungey</span><span class="pd">Owners. Trace focuses on flooring.</span></li><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s1w1"><span class="pn">Chad</span><span class="pd">Day-to-day management.</span></li><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s1w2"><span class="pn">Bobby</span><span class="pd">Day-to-day management.</span></li><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s1w3"><span class="pn">Maddie</span><span class="pd">Buyer/sales.</span></li><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s1w4"><span class="pn">McKenzie</span><span class="pd">Buyer/sales.</span></li></ul>
+   <div class="sec mt">THE STORE</div>
+   <div class="hist">904 Canty Ave, New Hampton IA 50659 · Acct 81900 ship-to 03 (Customer Program 2026-10-06). Family-owned, Osage + New Hampton. Program bedding = M91 foundations only (no mattress SKUs) — open for Augusta + protectors. Buying group: Furniture First.</div>
+  </div>
+  <div class="col right">
+   <div class="sec">UNITS SOLD</div>
+   <div class="tiles"><div class="tile"><div class="num" style="color:#1f2a44" data-count="49" data-prefix="">49</div><div class="lbl">Last 365</div></div><div class="tile"><div class="num" style="color:#6b7280" data-count="0" data-prefix="">0</div><div class="lbl">Last 90</div></div><div class="tile"><div class="num" style="color:#6b7280" data-count="0" data-prefix="">0</div><div class="lbl">Last 30</div></div></div>
+   <div class="btitle">Foundations on program (YR) — no mattress SKUs</div>
+   <div class="bars"><div class="brow"><div class="bl">Queen found. M91</div><div class="bv"><span class="bar" style="--p:100.0;--i:0;background:#1f2a44"></span><b class="val" data-count="28" data-prefix="">28</b><span class="note">YR 28</span></div></div><div class="brow"><div class="bl">Full found. M91</div><div class="bv"><span class="bar" style="--p:35.29;--i:1;background:#1d4ed8"></span><b class="val" data-count="10" data-prefix="">10</b><span class="note">YR 10</span></div></div><div class="brow"><div class="bl">Twin found. M91</div><div class="bv"><span class="bar" style="--p:24.71;--i:2;background:#15803d"></span><b class="val" data-count="7" data-prefix="">7</b><span class="note">YR 7</span></div></div><div class="brow"><div class="bl">King found. M91</div><div class="bv"><span class="bar" style="--p:14.12;--i:3;background:#b45309"></span><b class="val" data-count="4" data-prefix="">4</b><span class="note">YR 4</span></div></div></div>
+  </div>
+ </div>
+ <div class="sec mt2">THE FLOOR AT A GLANCE</div>
+ <div class="pills"><span class="pill" style="background:#1f2a44">904 Canty · 81900-03</span><span class="pill" style="background:#1f2a44">Foundations only — no mattresses</span></div>
+ <div class="sec mt2 playhead"><span>PLAYS</span><button type="button" class="mini copy" data-copy="1"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 3h10a2 2 0 0 1 2 2v12h-2V5H8V3zM5 7h10a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm0 2v11h10V9H5z"/></svg><span>Copy plays</span></button></div>
+ <ul class="plays"><li><label class="play"><input type="checkbox" data-key="s1p0"><span class="box" aria-hidden="true"></span><span class="pt">Lead with people: owners <b>Mark & Trace</b>; day-to-day <b>Chad + Bobby</b>; buyers <b>Maddie</b> and <b>McKenzie</b>.</span></label></li><li><label class="play"><input type="checkbox" data-key="s1p1"><span class="box" aria-hidden="true"></span><span class="pt">Program shows <b>zero mattresses</b> — only M91 foundations. Open with Augusta 2 Hybrid M525 + protectors.</span></label></li><li><label class="play"><input type="checkbox" data-key="s1p2"><span class="box" aria-hidden="true"></span><span class="pt">Confirm New Hampton <b>phone</b>.</span></label></li></ul>
+</div></div>
+</details>
+<details class="card" id="stop2" data-stop="2" style="--goal:#15803d" open>
+<summary class="head">
+ <span class="hrow">
+  <span class="badge">2</span>
+  <span class="htxt"><span class="hname">Neighborhood Home · Digital Dog Pound</span> <span class="hmeta">Neighborhood Home acct 3413200 · Digital Dog Pound (DBA, bedding only) · same acct</span></span>
+  <span class="hprog" data-prog="2" aria-label="plays done"><span class="done">0</span>/5</span>
+  <span class="chev" aria-hidden="true"></span>
+ </span>
+ <span class="goal">GOAL: Restonic #70 number-check — walk the counter with Amy & Matthew</span>
+ <span class="head-actions"><a class="btn prog" href="nh-customer-program-digital-dog-pound-waterloo-01.pdf" target="_blank" rel="noopener" aria-label="Digital Dog Pound bedding only (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V9h5.5L13 3.5zM8 13h8v1.6H8V13zm0 3.4h8V18H8v-1.6z"/></svg><span>Digital Dog Pound bedding only</span></a><a class="btn prog" href="nh-customer-program-west-union-06.pdf" target="_blank" rel="noopener" aria-label="Program A · West Union 06 (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V9h5.5L13 3.5zM8 13h8v1.6H8V13zm0 3.4h8V18H8v-1.6z"/></svg><span>Program A · West Union 06</span></a></span>
+</summary>
+<div class="body"><div class="inner">
+ <div class="actions" style="display:none" aria-hidden="true"></div>
+ <div class="grid">
+  <div class="col">
+   <div class="sec">WHO TO TALK TO</div>
+   <ul class="people"><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s2w0"><span class="pn">Amy Schneider</span><span class="pd">Co-owner. Default meeting store = Waverly.</span></li><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s2w1"><span class="pn">Matthew Schneider</span><span class="pd">Co-owner. Restonic/Spring Air competitive push (Jeff Braun); wants polished Ashley counter.</span></li><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s2w2"><span class="pn">Names on this card</span><span class="pd">&lt;b&gt;Neighborhood Home&lt;/b&gt; acct &lt;b&gt;3413200&lt;/b&gt; · &lt;b&gt;Digital Dog Pound&lt;/b&gt; (DBA, bedding only) — same customer #. &lt;b&gt;3 locations / 2 Customer Programs&lt;/b&gt;: Waverly · Waterloo · West Union. Program A = West Union ship-to &lt;b&gt;06&lt;/b&gt; (filed). Program B = Waterloo Digital Dog Pound ship-to 01 Flammang (filed). Waverly pairing UNCLEAR.</span></li></ul>
+   <div class="sec mt">THE STORE</div>
+   <div class="hist">1305 W Bremer Ave, Waverly IA 50677 · 319-352-4888. Restonic / Spring Air dashboard #70 check is HERE. Program A = West Union ship-to 06 (filed). Program B = Waterloo DIGITAL DOG POUND ship-to 01 · 1522 Flammang Dr Suite 300 (filed; storefront still Crossroads Blvd). Waverly which-of-2 pairing UNCLEAR. Counter deck in neighborhood-home/lineup-2026-10-02/. Open: protector/cooling (Amy Sep 11).</div>
+  </div>
+  <div class="col right">
+   <div class="sec">UNITS SOLD</div>
+   <div class="tiles"><div class="tile"><div class="num" style="color:#1f2a44" data-count="729" data-prefix="">729</div><div class="lbl">Last 365</div></div><div class="tile"><div class="num" style="color:#1f2a44" data-count="178" data-prefix="">178</div><div class="lbl">Last 90</div></div><div class="tile"><div class="num" style="color:#1f2a44" data-count="87" data-prefix="">87</div><div class="lbl">Last 30</div></div></div>
+   <div class="btitle">Digital Dog Pound bedding (ship-to 01) — last 365</div>
+   <div class="bars"><div class="brow"><div class="bl">Queen found. M91</div><div class="bv"><span class="bar" style="--p:100.0;--i:0;background:#1f2a44"></span><b class="val" data-count="98" data-prefix="">98</b><span class="note">YR 98 · 90d 17</span></div></div><div class="brow"><div class="bl">Peak 2.0 Hyb Queen</div><div class="bv"><span class="bar" style="--p:75.29;--i:1;background:#1d4ed8"></span><b class="val" data-count="74" data-prefix="">74</b><span class="note">YR 74 · 90d 34</span></div></div><div class="brow"><div class="bl">Full found. M91</div><div class="bv"><span class="bar" style="--p:54.71;--i:2;background:#15803d"></span><b class="val" data-count="54" data-prefix="">54</b><span class="note">YR 54 · 90d 15</span></div></div><div class="brow"><div class="bl">Peak 2.0 MF Queen</div><div class="bv"><span class="bar" style="--p:48.82;--i:3;background:#b45309"></span><b class="val" data-count="48" data-prefix="">48</b><span class="note">YR 48 · 90d 12</span></div></div><div class="brow"><div class="bl">Peak 2.0 Hyb Full</div><div class="bv"><span class="bar" style="--p:42.35;--i:4;background:#6b7280"></span><b class="val" data-count="42" data-prefix="">42</b><span class="note">YR 42 · 90d 19</span></div></div></div>
+  </div>
+ </div>
+ <div class="sec mt2">THE FLOOR AT A GLANCE</div>
+ <div class="pills"><span class="pill" style="background:#15803d">Neighborhood Home 3413200</span><span class="pill" style="background:#15803d">Digital Dog Pound (DBA, bedding only)</span><br><span class="pill" style="background:#b45309">West Union ship-to 06</span><span class="pill" style="background:#b45309">3 loc / 2 programs</span><span class="pill" style="background:#b45309">Protector open</span></div>
+ <div class="sec mt2 playhead"><span>PLAYS</span><button type="button" class="mini copy" data-copy="2"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 3h10a2 2 0 0 1 2 2v12h-2V5H8V3zM5 7h10a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm0 2v11h10V9H5z"/></svg><span>Copy plays</span></button></div>
+ <ul class="plays"><li><label class="play"><input type="checkbox" data-key="s2p0"><span class="box" aria-hidden="true"></span><span class="pt">Walk <b>Restonic/Spring Air vs Ashley</b> with Denny + Amy/Matthew (board #70) at <b>Waverly</b>.</span></label></li><li><label class="play"><input type="checkbox" data-key="s2p1"><span class="box" aria-hidden="true"></span><span class="pt">Same card = <b>Neighborhood Home 3413200</b> + <b>Digital Dog Pound (DBA, bedding only)</b>. Primary clickable = Program B Waterloo ship-to <b>01</b> Flammang (Peak 2.0 / DreamCloud / Nectar / Chime / protectors). Second button = Program A West Union 06.</span></label></li><li><label class="play"><input type="checkbox" data-key="s2p2"><span class="box" aria-hidden="true"></span><span class="pt">Waverly stop: still <b>UNCLEAR</b> which of the 2 programs covers this store — do not invent a third ship-to.</span></label></li><li><label class="play"><input type="checkbox" data-key="s2p3"><span class="box" aria-hidden="true"></span><span class="pt">Carry the Oct 2 counter deck from <b>neighborhood-home/lineup-2026-10-02/</b>.</span></label></li><li><label class="play"><input type="checkbox" data-key="s2p4"><span class="box" aria-hidden="true"></span><span class="pt">Protector/cooling continuity still open — M308/M309/M310 on Program B; don't promise a SKU.</span></label></li></ul>
+</div></div>
+</details>
+<details class="card" id="stop3" data-stop="3" style="--goal:#b45309" open>
+<summary class="head">
+ <span class="hrow">
+  <span class="badge">3</span>
+  <span class="htxt"><span class="hname">Furniture & More</span> <span class="hmeta">Waterloo &middot; Acct 1488400</span></span>
+  <span class="hprog" data-prog="3" aria-label="plays done"><span class="done">0</span>/4</span>
+  <span class="chev" aria-hidden="true"></span>
+ </span>
+ <span class="goal">GOAL: Rental mattresses — rental-based store; flex Wed stop (now stop 3) · 2325 Logan · 1488400</span>
+ <span class="head-actions"><a class="btn prog" href="furniture-more-customer-program.pdf" target="_blank" rel="noopener" aria-label="customer program (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V9h5.5L13 3.5zM8 13h8v1.6H8V13zm0 3.4h8V18H8v-1.6z"/></svg><span>customer program</span></a></span>
+</summary>
+<div class="body"><div class="inner">
+ <div class="actions" style="display:none" aria-hidden="true"></div>
+ <div class="grid">
+  <div class="col">
+   <div class="sec">WHO TO TALK TO</div>
+   <ul class="people"><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s3w0"><span class="pn">John &amp; Tammy</span><span class="pd">Owners; run the store. Start here if you walk in.</span></li></ul>
+   <div class="sec mt">THE STORE</div>
+   <div class="hist">2325 Logan Avenue, Waterloo IA 50703 · Acct 1488400 (Customer Program 2026-10-06). Display Furniture & More; Owners John & Tammy. Flex Wed stop (now stop 3) — may skip. Phone UNCLEAR. Bedding: Peak 2.0 Hybrid, LE Plush, Gray 1200, Ashley Firm, Comfort Plus, Augusta 2, adj head-up base M5X132, foundations M98/M91/M78.</div>
+  </div>
+  <div class="col right">
+   <div class="sec">UNITS SOLD</div>
+   <div class="tiles"><div class="tile"><div class="num" style="color:#1f2a44" data-count="103" data-prefix="">103</div><div class="lbl">Last 365</div></div><div class="tile"><div class="num" style="color:#1f2a44" data-count="9" data-prefix="">9</div><div class="lbl">Last 90</div></div><div class="tile"><div class="num" style="color:#1f2a44" data-count="4" data-prefix="">4</div><div class="lbl">Last 30</div></div></div>
+   <div class="btitle">Bedding units from customer program (YR)</div>
+   <div class="bars"><div class="brow"><div class="bl">Queen found. M98</div><div class="bv"><span class="bar" style="--p:100.0;--i:0;background:#1f2a44"></span><b class="val" data-count="24" data-prefix="">24</b><span class="note">YR 24 · 90d 4</span></div></div><div class="brow"><div class="bl">Ashley Firm Twin</div><div class="bv"><span class="bar" style="--p:50.0;--i:1;background:#1d4ed8"></span><b class="val" data-count="12" data-prefix="">12</b><span class="note">YR 12</span></div></div><div class="brow"><div class="bl">Comfort Plus Full</div><div class="bv"><span class="bar" style="--p:37.06;--i:2;background:#15803d"></span><b class="val" data-count="9" data-prefix="">9</b><span class="note">YR 9</span></div></div><div class="brow"><div class="bl">Ashley Firm Full</div><div class="bv"><span class="bar" style="--p:24.71;--i:3;background:#b45309"></span><b class="val" data-count="6" data-prefix="">6</b><span class="note">YR 6 · 90d 3</span></div></div><div class="brow"><div class="bl">Comfort Plus King</div><div class="bv"><span class="bar" style="--p:24.71;--i:4;background:#6b7280"></span><b class="val" data-count="6" data-prefix="">6</b><span class="note">YR 6</span></div></div></div>
+  </div>
+ </div>
+ <div class="sec mt2">THE FLOOR AT A GLANCE</div>
+ <div class="pills"><span class="pill" style="background:#b45309">2325 Logan · 1488400</span><span class="pill" style="background:#b45309">Rental mattresses</span><span class="pill" style="background:#b45309">Flex</span><br><span class="pill" style="background:#c8102e">NOT McGowan&#x27;s (TJ)</span></div>
+ <div class="sec mt2 playhead"><span>PLAYS</span><button type="button" class="mini copy" data-copy="3"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 3h10a2 2 0 0 1 2 2v12h-2V5H8V3zM5 7h10a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm0 2v11h10V9H5z"/></svg><span>Copy plays</span></button></div>
+ <ul class="plays"><li><label class="play"><input type="checkbox" data-key="s3p0"><span class="box" aria-hidden="true"></span><span class="pt">If you stop: shake hands with <b>John and Tammy</b> at 2325 Logan.</span></label></li><li><label class="play"><input type="checkbox" data-key="s3p1"><span class="box" aria-hidden="true"></span><span class="pt">Store is <b>rental-based</b> — push <b>rental mattresses</b>.</span></label></li><li><label class="play"><input type="checkbox" data-key="s3p2"><span class="box" aria-hidden="true"></span><span class="pt">Confirm display <b>Furniture & More</b> (1488400) — not McGowan's.</span></label></li><li><label class="play"><input type="checkbox" data-key="s3p3"><span class="box" aria-hidden="true"></span><span class="pt">Skip cleanly if the day is tight.</span></label></li></ul>
+</div></div>
+</details>
+<details class="card" id="stop4" data-stop="4" style="--goal:#6b7280" open>
+<summary class="head">
+ <span class="hrow">
+  <span class="badge">4</span>
+  <span class="htxt"><span class="hname">Corcoran Furniture</span> <span class="hmeta">Manchester &middot; Acct 2153200</span></span>
+  <span class="hprog" data-prog="4" aria-label="plays done"><span class="done">0</span>/3</span>
+  <span class="chev" aria-hidden="true"></span>
+ </span>
+ <span class="goal">GOAL: Check-in: Jamie & Natalie — LE Plush / adj bases on program (acct 2153200)</span>
+ <span class="head-actions"><a class="btn prog" href="corcoran-customer-program.pdf" target="_blank" rel="noopener" aria-label="customer program (PDF, opens in a new tab)"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V9h5.5L13 3.5zM8 13h8v1.6H8V13zm0 3.4h8V18H8v-1.6z"/></svg><span>customer program</span></a></span>
+</summary>
+<div class="body"><div class="inner">
+ <div class="actions" style="display:none" aria-hidden="true"></div>
+ <div class="grid">
+  <div class="col">
+   <div class="sec">WHO TO TALK TO</div>
+   <ul class="people"><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s4w0"><span class="pn">Jamie Vaske</span><span class="pd">Owner (son); chamber primary contact. His first retail store; came from plumbing/heating.</span></li><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s4w1"><span class="pn">Natalie Vaske</span><span class="pd">Co-owner (mom). Did Corcoran&#x27;s books for years before they bought it.</span></li><li class="person" tabindex="0" role="button" aria-pressed="false" data-key="s4w2"><span class="pn">Name check</span><span class="pd">Seller was Jim Corcoran, not &quot;Bill.&quot; Bill Logan was the longtime salesperson who retired with Jim in May 2022.</span></li></ul>
+   <div class="sec mt">THE STORE</div>
+   <div class="hist">201 S 9th St, Manchester IA 52057 · (563) 927-3640 · Acct 2153200 (Customer Program 2026-10-06). Jim Corcoran sold to Jamie & Natalie Vaske in 2022 (LLC Manchester Furniture Mart). Kept Corcoran name + free delivery. Bedding on program: Millennium 2.0 Hybrid TXL, LE Firm (some D), LE Plush (Queen YR 7), Comfort Classic / head-up / Best Base / Cosmic adj bases, M91 foundations.</div>
+  </div>
+  <div class="col right">
+   <div class="sec">UNITS SOLD</div>
+   <div class="tiles"><div class="tile"><div class="num" style="color:#1f2a44" data-count="33" data-prefix="">33</div><div class="lbl">Last 365</div></div><div class="tile"><div class="num" style="color:#1f2a44" data-count="11" data-prefix="">11</div><div class="lbl">Last 90</div></div><div class="tile"><div class="num" style="color:#1f2a44" data-count="7" data-prefix="">7</div><div class="lbl">Last 30</div></div></div>
+   <div class="btitle">Bedding units from customer program (YR)</div>
+   <div class="bars"><div class="brow"><div class="bl">LE Plush Queen</div><div class="bv"><span class="bar" style="--p:100.0;--i:0;background:#1f2a44"></span><b class="val" data-count="7" data-prefix="">7</b><span class="note">YR 7 · 90d 2</span></div></div><div class="brow"><div class="bl">Queen found. M91</div><div class="bv"><span class="bar" style="--p:57.06;--i:1;background:#1d4ed8"></span><b class="val" data-count="4" data-prefix="">4</b><span class="note">YR 4 · 90d 4</span></div></div><div class="brow"><div class="bl">TXL adj base</div><div class="bv"><span class="bar" style="--p:42.35;--i:2;background:#15803d"></span><b class="val" data-count="3" data-prefix="">3</b><span class="note">YR 3 · 90d 2</span></div></div><div class="brow"><div class="bl">Adj head-up base</div><div class="bv"><span class="bar" style="--p:42.35;--i:3;background:#b45309"></span><b class="val" data-count="3" data-prefix="">3</b><span class="note">YR 3</span></div></div><div class="brow"><div class="bl">Full found. M91</div><div class="bv"><span class="bar" style="--p:28.24;--i:4;background:#6b7280"></span><b class="val" data-count="2" data-prefix="">2</b><span class="note">YR 2 · 90d 2</span></div></div></div>
+  </div>
+ </div>
+ <div class="sec mt2">THE FLOOR AT A GLANCE</div>
+ <div class="pills"><span class="pill" style="background:#6b7280">201 S 9th · 2153200</span><span class="pill" style="background:#6b7280">Jamie + Natalie</span><br><span class="pill" style="background:#1d4ed8">LE Plush + adj bases</span></div>
+ <div class="sec mt2 playhead"><span>PLAYS</span><button type="button" class="mini copy" data-copy="4"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 3h10a2 2 0 0 1 2 2v12h-2V5H8V3zM5 7h10a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm0 2v11h10V9H5z"/></svg><span>Copy plays</span></button></div>
+ <ul class="plays"><li><label class="play"><input type="checkbox" data-key="s4p0"><span class="box" aria-hidden="true"></span><span class="pt">Open with <b>Jamie and Natalie</b> — don't call the seller Bill.</span></label></li><li><label class="play"><input type="checkbox" data-key="s4p1"><span class="box" aria-hidden="true"></span><span class="pt">Program shows <b>LE Plush Queen</b> (strongest mattress YR) + deep <b>adjustable bases</b> — compare to floor.</span></label></li><li><label class="play"><input type="checkbox" data-key="s4p2"><span class="box" aria-hidden="true"></span><span class="pt">Acct <b>2153200</b> locked from Customer Program; phone (563) 927-3640.</span></label></li></ul>
+</div></div>
+</details>
+</main>
+<footer><span>Costs are queen-set dealer costs from program/price files; ticket prices are examples. Prepared for David Henry.</span>
+<button type="button" class="linkbtn nojs-hide" id="clearTicks">Clear ticks</button></footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var NS = 'denny-brief-2026-10-07:';
+  var store = {
+    get:function(k){try{return localStorage.getItem(NS+k)}catch(e){return null}},
+    set:function(k,v){try{localStorage.setItem(NS+k,v)}catch(e){}},
+    del:function(k){try{localStorage.removeItem(NS+k)}catch(e){}}
+  };
+  var cards = [].slice.call(document.querySelectorAll('details.card'));
+  var tabs = [].slice.call(document.querySelectorAll('.tab'));
+  var sticky = document.querySelector('.sticky');
+  function $(sel,root){return (root||document).querySelector(sel)}
+  function $$(sel,root){return [].slice.call((root||document).querySelectorAll(sel))}
+  function cardFor(n){return document.getElementById('stop'+n)}
+  function setStick(){document.documentElement.style.setProperty('--stick',(sticky.offsetHeight+8)+'px')}
+
+  /* ---- count-up + bars ---- */
+  function countUp(el){
+    var target=+el.getAttribute('data-count')||0, pre=el.getAttribute('data-prefix')||'';
+    if(RM||target===0){el.textContent=pre+target;return}
+    var t0=null,dur=850+Math.min(target,600)*0.6;
+    el.textContent=pre+'0';
+    function step(ts){
+      if(!t0)t0=ts;
+      var p=Math.min(1,(ts-t0)/dur), e=1-Math.pow(1-p,3);
+      el.textContent=pre+Math.round(target*e);
+      if(p<1&&el._run)requestAnimationFrame(step);
+      else el.textContent=pre+target;
+    }
+    el._run=true; requestAnimationFrame(step);
+  }
+  function runAnim(card){
+    if(card._anim)return; card._anim=true;
+    $$('[data-count]',card).forEach(countUp);
+    if(RM){card.classList.add('run');return}
+    card.offsetWidth; requestAnimationFrame(function(){card.classList.add('run')});
+  }
+  function resetAnim(card){
+    card._anim=false; card.classList.remove('run');
+    $$('[data-count]',card).forEach(function(el){el._run=false;el.textContent=(el.getAttribute('data-prefix')||'')+'0'});
+  }
+
+  /* ---- open / close with height animation ---- */
+  function syncTabs(){
+    cards.forEach(function(c){
+      var t=$('.tab[data-stop="'+c.dataset.stop+'"]');
+      t.classList.toggle('on',c.open); t.setAttribute('aria-expanded',c.open?'true':'false');
+    });
+  }
+  function setHash(){
+    var open=cards.filter(function(c){return c.open});
+    var h=open.length===1?'#'+open[0].id:'';
+    if(location.hash!==h){try{history.replaceState(null,'',h||(location.pathname+location.search))}catch(e){}}
+  }
+  function openCard(card,opts){
+    opts=opts||{};
+    if(!card.open){
+      card.open=true;
+      var body=$('.body',card);
+      if(!RM&&body.animate&&!opts.instant){
+        var h=body.scrollHeight;
+        body.animate([{height:'0px',opacity:0},{height:h+'px',opacity:1}],{duration:300,easing:'cubic-bezier(.2,.8,.2,1)'});
+      }
+    }
+    runAnim(card); syncTabs();
+    if(opts.scroll){
+      var go=function(){card.scrollIntoView({behavior:(RM||opts.instant)?'instant':'smooth',block:'start'})};
+      opts.instant?go():requestAnimationFrame(go);
+    }
+  }
+  function closeCard(card,opts){
+    opts=opts||{};
+    if(!card.open)return;
+    var body=$('.body',card);
+    var done=function(){card.open=false;resetAnim(card);syncTabs();setHash()};
+    if(!RM&&body.animate&&!opts.instant){
+      var h=body.offsetHeight;
+      var a=body.animate([{height:h+'px',opacity:1},{height:'0px',opacity:0}],{duration:220,easing:'ease-in'});
+      a.onfinish=done;
+    } else done();
+  }
+  function toggleCard(card,opts){card.open?closeCard(card,opts):openCard(card,opts)}
+
+  cards.forEach(function(card){
+    $$('.head-actions a',card).forEach(function(a){
+      a.addEventListener('click',function(e){e.stopPropagation()});
+    });
+    $('summary',card).addEventListener('click',function(e){
+      if(e.target.closest && e.target.closest('.head-actions')){return;}
+      e.preventDefault();
+      if(card.open){closeCard(card)}else{openCard(card);}
+      setTimeout(setHash,0);
+    });
+    card.addEventListener('toggle',function(){ /* native toggles (find-in-page etc.) */
+      if(card.open)runAnim(card); else resetAnim(card);
+      syncTabs();
+    });
+  });
+  tabs.forEach(function(t){
+    t.setAttribute('role','button');
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var card=cardFor(t.dataset.stop);
+      if(card.open){closeCard(card)}else{openCard(card,{scroll:true})}
+      setTimeout(setHash,0);
+    });
+  });
+  $('#expandAll').addEventListener('click',function(){cards.forEach(function(c){openCard(c)});setHash()});
+  $('#collapseAll').addEventListener('click',function(){
+    cards.forEach(function(c){closeCard(c)});
+    window.scrollTo({top:0,behavior:RM?'instant':'smooth'});
+  });
+
+  /* ---- who-to-talk-to highlight ---- */
+  $$('.person').forEach(function(p){
+    var k='who:'+p.dataset.key;
+    function apply(on){p.classList.toggle('hl',on);p.setAttribute('aria-pressed',on?'true':'false')}
+    apply(store.get(k)==='1');
+    function flip(){var on=!p.classList.contains('hl');apply(on);on?store.set(k,'1'):store.del(k)}
+    p.addEventListener('click',flip);
+    p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}});
+  });
+
+  /* ---- plays checkboxes ---- */
+  function updateProgress(){
+    cards.forEach(function(c){
+      var n=c.dataset.stop, boxes=$$('.plays input',c), d=boxes.filter(function(b){return b.checked}).length;
+      var hp=$('.hprog',c); $('.done',hp).textContent=d; hp.classList.toggle('all',d===boxes.length);
+      var tp=$('.tab[data-stop="'+n+'"] .tp'); tp.textContent='\u2713 '+d+'/'+boxes.length; tp.classList.toggle('all',d===boxes.length);
+    });
+  }
+  $$('.plays input').forEach(function(b){
+    var k='play:'+b.dataset.key;
+    b.checked=store.get(k)==='1';
+    b.addEventListener('change',function(){b.checked?store.set(k,'1'):store.del(k);updateProgress();
+      if(b.checked){var c=b.closest('.card'),all=$$('.plays input',c).every(function(x){return x.checked});if(all)toast('All plays done for stop '+c.dataset.stop)}});
+  });
+  $$('.hprog').forEach(function(h){h.addEventListener('click',function(e){e.stopPropagation()})});
+  updateProgress();
+
+  /* ---- copy plays ---- */
+  var tEl=$('#toast'),tT;
+  function toast(msg){tEl.textContent=msg;tEl.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){tEl.classList.remove('show')},1800)}
+  function copyText(txt){
+    if(navigator.clipboard&&window.isSecureContext){return navigator.clipboard.writeText(txt)}
+    return new Promise(function(res,rej){
+      var ta=document.createElement('textarea');ta.value=txt;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();try{document.execCommand('copy')?res():rej()}catch(e){rej(e)}document.body.removeChild(ta);
+    });
+  }
+  $$('.copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var c=cardFor(btn.dataset.copy);
+      var name=$('.hname',c).textContent, lines=['Stop '+c.dataset.stop+' \u00b7 '+name+' \u00b7 Plays'];
+      $$('.play',c).forEach(function(l){lines.push(($('input',l).checked?'[x] ':'[ ] ')+$('.pt',l).textContent)});
+      copyText(lines.join('\n')).then(function(){toast('Plays copied')},function(){toast('Copy not available here')});
+    });
+  });
+  $('#clearTicks').addEventListener('click',function(){
+    $$('.plays input').forEach(function(b){b.checked=false;store.del('play:'+b.dataset.key)});
+    $$('.person').forEach(function(p){p.classList.remove('hl');p.setAttribute('aria-pressed','false');store.del('who:'+p.dataset.key)});
+    updateProgress();toast('Ticks and highlights cleared');
+  });
+
+  /* ---- initial state: all open so programs/charts visible; hash focuses one ---- */
+  function hashStop(){var m=/^#stop([1-8])$/.exec(location.hash);return m?cardFor(m[1]):null}
+  var target=hashStop();
+  cards.forEach(function(c){c.open=true; runAnim(c);});
+  setStick();
+  if(target){openCard(target,{instant:true,scroll:true});}
+  syncTabs();
+  window.addEventListener('load',function(){setStick();var t=hashStop();if(t&&t.open)t.scrollIntoView({behavior:'instant',block:'start'})});
+  window.addEventListener('resize',setStick);
+  window.addEventListener('hashchange',function(){var t=hashStop();if(t)openCard(t,{scroll:true})});
+  window.addEventListener('beforeprint',function(){cards.forEach(function(c){openCard(c,{instant:true})})});
+})();
+</script>
+</body></html>
